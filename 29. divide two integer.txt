@@ -1,0 +1,14 @@
+class Solution {
+    public int divide(int dividend, int divisor) {
+        // int dividend = 10
+        // divisior = 3
+
+       
+        if(dividend == Integer.MIN_VALUE && divisor == -1){
+            return Integer.MIN_VALUE+1 /-1;
+        }
+         int res = dividend/divisor;
+
+        return res;
+    }
+}

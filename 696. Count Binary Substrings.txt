@@ -1,0 +1,56 @@
+class Solution {
+    public int countBinarySubstrings(String s) {
+        
+        // int s = "00110011"
+        // int first = s.charAt(0);
+        // int sec = s.charAt(1);
+
+         int count =0;
+        // for(int i =0;i<s.length()-1;i++ ){
+        // if(s.charAt(i) != s.charAt(i+1)){
+        //     count++;
+        // }
+        // else if(s.charAt(i) == s.charAt(i+1)){
+        //      count++;
+        // }
+        // int new = 0;
+
+        // int same = 0;
+        // for(int i=1;i<s.length();i++){
+        //     if(s.charAt(i) == s.charAt(i-1)){
+        //         same++;
+        //     }
+        //     else if(s.charAt(i) != s.charAt(i-1)){
+        //         count++;
+        //     }
+
+        //     if(same == 2){
+        //         count++;
+        //         same =1;
+        //     }
+        // }
+
+        // while(sec<s.length()-2){
+        //     if((first == sec) != ( (s.charAt(first+2) ) == (s.charAt(sec+2)))){
+        //         count++;
+        //         first++;
+        //         sec++;
+        //     }
+        // }
+        int sum =0;
+        int num =1;
+        int pre = 0;
+        for(int i =1;i<s.length();i++){
+            if(s.charAt(i) == s.charAt(i-1))
+            num++;
+            else{
+                sum = sum +(Math.min(num,pre));
+                pre = num;
+                num=1;
+            }      
+        }
+        sum = sum + (Math.min(num,pre));
+
+        return sum;
+    }
+}

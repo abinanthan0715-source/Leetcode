@@ -1,0 +1,43 @@
+class Solution {
+    public int[] pivotArray(int[] nums, int pivot) {
+        ArrayList<Integer> less = new ArrayList<>();
+        ArrayList<Integer> mid = new ArrayList<>();
+        ArrayList<Integer> high = new ArrayList<>();
+
+        int i =0;
+        int index = 0;
+
+        while(i<nums.length){
+            if(nums[i]<pivot){
+                 less.add(nums[i]);
+                 index++;
+                i++;
+            }
+            else if(nums[i]==pivot){
+                 mid.add(nums[i]);
+                 index++;
+                i++;
+                }
+            else{
+                 high.add(nums[i]);
+                index++;
+                i++;
+            }
+        }
+
+        int idx = 0;
+
+        for(int x =0 ;x<less.size();x++){
+            nums[idx++] = less.get(x);
+        }
+
+        for(int x =0 ;x<mid.size();x++){
+            nums[idx++] = mid.get(x);
+        }
+
+        for(int x =0 ;x<high.size();x++){
+            nums[idx++] = high.get(x);
+        }
+        return nums;
+    }
+}

@@ -1,0 +1,57 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+         char[] ss1 = s.toCharArray();
+        char[] tt1 =  t.toCharArray();
+        boolean a = true;
+
+        HashMap<Character, Integer> s1 = new HashMap<>();
+        HashMap<Character, Integer> t1 = new HashMap<>();
+
+        int count = 1;
+        int i =0;
+        int j = 0;
+        while(i<ss1.length){
+            if(s1.containsKey(ss1[i])){ 
+                i++;
+                continue;
+            }
+            j = i+1;
+            while(j<ss1.length){
+                if(ss1[i] == ss1[j]){
+                    count++;
+                }
+                j++;
+            }
+            s1.put(ss1[i], count);
+            count =1;
+            i++;
+        }
+
+        count = 1;
+        i=0;
+
+        while(i<tt1.length){
+            if(t1.containsKey(tt1[i])){ 
+                i++;
+                 continue;
+            }
+            j = i+1;
+            while(j<tt1.length){
+                if(tt1[i] == tt1[j]){
+                    count++;
+                }
+                j++;
+            }
+            t1.put(tt1[i], count);
+            count =1;
+            i++;
+        }
+
+            if(s1.equals(t1)){
+                return true;
+            }
+
+            return false;
+
+    }
+}

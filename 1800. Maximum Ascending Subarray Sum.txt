@@ -1,0 +1,24 @@
+class Solution {
+    public int maxAscendingSum(int[] nums) {
+        int j = 1;
+        int max = nums[0];
+        int sum = nums[0];
+
+        while(j<nums.length){
+            if(nums[j-1]<nums[j]){
+                sum = sum+nums[j];
+            }else {
+                sum = nums[j];
+            }
+            if(max<sum){
+                max = sum;
+            }
+            j++;
+        }
+        return max;
+            }
+}
+
+
+
+

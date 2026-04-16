@@ -1,0 +1,24 @@
+class Solution {
+    public int[] runningSum(int[] nums) {
+
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        int[] arr = new int[nums.length];
+        int index = 0;
+
+        while(j<nums.length){
+            sum = sum+nums[i];
+
+            if(i==j){
+                arr[index++] = sum;
+                j++;
+                sum = 0;
+                i=0; 
+            }else{
+                i++;
+            }
+        }
+        return arr;
+    }
+}

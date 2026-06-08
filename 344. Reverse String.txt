@@ -1,0 +1,12 @@
+class Solution {
+    public void reverseString(char[] s) {
+
+       char[] a = s.clone();
+        int j = 0;
+
+        for(int i = a.length-1;i>=0;i--){
+            s[j] = a[i];  
+            j++;
+        }
+    }
+}
